@@ -1,11 +1,11 @@
-import { SRPInformationText } from "../../constants/SRP/SRPInformationText";
+import { ContainerInformationText } from "../../constants/Container/ContainerInformationText";
 import InformationCard from "../shared/InformationCard";
 
 const SRPIntroSection = () => {
     return (
         <InformationCard
-            title={SRPInformationText.title}
-            description={SRPInformationText.description}
+            title={ContainerInformationText.title}
+            description={ContainerInformationText.description}
         />
     );
 };
