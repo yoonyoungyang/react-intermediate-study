@@ -1,8 +1,11 @@
-import { useParams } from 'react-router-dom'
-import { Link } from "react-router-dom"
+import { Link, useParams } from 'react-router-dom'
+import { useState } from 'react'
+import DetailTabs from '../components/detail/DetailTabs'
 
 export default function DetailPage() {
   const { topic } = useParams()
+    const [activeTab, setActiveTab] = useState('demo')
+
 
   const titleMap: Record<string, string> = {
     srp: 'SRP (Single Responsibility Principle)',
@@ -16,7 +19,8 @@ export default function DetailPage() {
     <main>
         <Link to="/">← 홈으로</Link>
       <h1>{title}</h1>
-      <p>여기에 데모 / 코드 비교 / 가이드가 들어올 예정입니다.</p>
-    </main>
+      <DetailTabs activeTab={activeTab} onTabChange={setActiveTab} />
+
+      <p>현재 탭: {activeTab}</p>    </main>
   )
 }
